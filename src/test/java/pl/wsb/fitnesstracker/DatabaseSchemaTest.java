@@ -24,8 +24,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
 class DatabaseSchemaTest {
 
-    @Autowired
-    private DataSource dataSource;
+    private final DataSource dataSource;
+
+    DatabaseSchemaTest(@Autowired DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @Test
     void shouldHaveUsersTable() throws Exception {
