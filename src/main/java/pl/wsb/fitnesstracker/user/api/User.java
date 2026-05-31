@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
@@ -21,15 +22,19 @@ public class User {
     @Nullable
     private Long id;
 
+    @Setter
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
+    @Setter
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
+    @Setter
     @Column(name = "birthdate", nullable = false)
     private LocalDate birthdate;
 
+    @Setter
     @Column(nullable = false, unique = true)
     private String email;
 
